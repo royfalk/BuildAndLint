@@ -9,11 +9,14 @@ import com.intellij.openapi.actionSystem.DataContext;
  */
 public class BuildAndLint extends AnAction {
     public void actionPerformed(AnActionEvent e) {
-        AnAction anAction = ActionManager.getInstance().getAction("CompileProject");
+        String[] actions = {"CompileProject", "InspectCode"};
+        for(String action: actions) {
+            AnAction anAction = ActionManager.getInstance().getAction(action);
 
-        DataContext context = e.getDataContext(); //DataManager.getInstance().getDataContext();
-        AnActionEvent anActionEvent = new AnActionEvent(null, context, "", anAction.getTemplatePresentation(), ActionManager.getInstance(), 0);
+            DataContext context = e.getDataContext(); //DataManager.getInstance().getDataContext();
+            AnActionEvent anActionEvent = new AnActionEvent(null, context, "", anAction.getTemplatePresentation(), ActionManager.getInstance(), 0);
 
-        anAction.actionPerformed(anActionEvent);
+            anAction.actionPerformed(anActionEvent);
+        }
     }
 }

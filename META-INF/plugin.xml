@@ -1,0 +1,44 @@
+<idea-plugin version="2">
+  <id>il.co.falk.buildAndLint</id>
+  <name>Build and Lint</name>
+  <version>1.0</version>
+  <vendor email="no_support@falk.co.il" url="http://www.no_domain.com">YourCompany</vendor>
+
+  <description><![CDATA[
+      This plugin answers this <a href="http://stackoverflow.com/q/32631131/5276890">question</a> in Stack Overflow.<br>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Initial version. No changes yet.
+    ]]>
+  </change-notes>
+
+  <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="131"/>
+
+  <!-- please see https://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="BuildAndLint" class="BuildAndLint" text="BuildAndLint" description="BuildAndLint">
+      <add-to-group group-id="BuildMenu" anchor="last"/>
+    </action>
+  </actions>
+
+</idea-plugin>
